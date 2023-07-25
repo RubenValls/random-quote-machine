@@ -22,17 +22,20 @@ function App() {
   }
 
   return (
-    <div id='container' style={{backgroundColor: selectedColor}}>
+    <div id='container' style={{backgroundColor: selectedColor, transition: '2s'}}>
       <div id='quote-box'>
-        <div id='text' style={{color: selectedColor}}>
+        <div id='text' style={{color: selectedColor, transition: '2s'}}>
           <h1><BiSolidQuoteLeft id='quote-icon'/>{selectedQuote?.quote}</h1>
         </div>
-        <div id='author' style={{color: selectedColor}}>
+        <div id='author' style={{color: selectedColor, transition: '2s'}}>
           <p>- {selectedQuote?.author}</p>
         </div>
         <div id='buttons'>
-          <button id='tweet-quote' style={{backgroundColor: selectedColor}}><BsTwitter/></button>
-          <button id='new-quote' style={{backgroundColor: selectedColor}} onClick={newQuote}>New Quote</button>
+          <a href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="${selectedQuote?.quote}" -${selectedQuote?.author}`}>
+            <button id='tweet-quote' style={{backgroundColor: selectedColor, transition: '2s'}}><BsTwitter/></button>
+          </a>
+          <button id='new-quote' style={{backgroundColor: selectedColor, transition: '2s'}} onClick={newQuote}>New Quote</button>
+          
         </div>
       </div>
     </div>
