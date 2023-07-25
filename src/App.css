@@ -16,7 +16,7 @@
   margin: auto;
   width: 85%;
   max-width: 800px;
-  background-color: whitesmoke;
+  background-color: rgba(225, 225, 225, 0.9);
 }
 
 #text{
@@ -46,4 +46,18 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 35px;
+}
+
+button{
+  padding: 7px;
+  min-width: 37px;
+  min-height: 37px;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover{
+  cursor: pointer;
+  opacity: 0.75;
+  transition: 0.5s;
 }

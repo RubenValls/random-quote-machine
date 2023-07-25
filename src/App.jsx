@@ -3,21 +3,22 @@ import { quotes } from './assets/quotes.js'
 import { colors } from './assets/colors.js'
 import './App.css'
 import { BiSolidQuoteLeft } from 'react-icons/bi';
+import { BsTwitter } from 'react-icons/bs';
 
 function App() {
   const allQuotes = quotes
   const allColors = colors
-  const [selectedQuote, setSelectedQuote] = useState({});
-  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedQuote, setSelectedQuote] = useState(allQuotes[0]);
+  const [selectedColor, setSelectedColor] = useState(allColors[0]);
 
   useEffect(() => {
-    setSelectedQuote(allQuotes[Math.floor(Math.random() * allQuotes.length - 1)])
-    setSelectedColor(allColors[Math.floor(Math.random() * allColors.length - 1)])
+    setSelectedQuote(allQuotes[Math.floor(Math.random() * allQuotes.length)])
+    setSelectedColor(allColors[Math.floor(Math.random() * allColors.length)])
   }, [allQuotes, allColors]);
 
   const newQuote = () => {
-    setSelectedQuote(allQuotes[Math.floor(Math.random() * allQuotes.length - 1)])
-    setSelectedColor(allColors[Math.floor(Math.random() * allColors.length - 1)])
+    setSelectedQuote(allQuotes[Math.floor(Math.random() * allQuotes.length)])
+    setSelectedColor(allColors[Math.floor(Math.random() * allColors.length)])
   }
 
   return (
@@ -30,8 +31,8 @@ function App() {
           <p>- {selectedQuote?.author}</p>
         </div>
         <div id='buttons'>
-          <button id='tweet-quote'>Twitter</button>
-          <button id='new-quote' onClick={newQuote}>New Quote</button>
+          <button id='tweet-quote' style={{backgroundColor: selectedColor}}><BsTwitter/></button>
+          <button id='new-quote' style={{backgroundColor: selectedColor}} onClick={newQuote}>New Quote</button>
         </div>
       </div>
     </div>
