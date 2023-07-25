@@ -1,0 +1,50 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+#container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}
+
+
+#quote-box{
+  margin: auto;
+  width: 85%;
+  max-width: 800px;
+  background-color: red;
+}
+
+#text{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+}
+
+#quote-icon{
+  width: 25px;
+  height: 25px;
+  padding-right: 10px;
+}
+
+#author{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 35px;
+}
+
+#buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 35px;
+}
